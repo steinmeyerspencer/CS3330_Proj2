@@ -24,7 +24,7 @@ public class Elf extends MiddleEarthCharacter{
 
 	@Override
 	public String getRace() {
-		return this.race;
+		return race;
 	}
 
 }

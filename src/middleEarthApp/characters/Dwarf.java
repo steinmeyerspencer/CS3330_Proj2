@@ -24,6 +24,6 @@ public class Dwarf extends MiddleEarthCharacter{
 
 	@Override
 	public String getRace() {
-		return this.race;
+		return race;
 	}
 }

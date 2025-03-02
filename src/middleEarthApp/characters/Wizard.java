@@ -23,6 +23,6 @@ public class Wizard extends MiddleEarthCharacter{
 
 	@Override
 	public String getRace() {
-		return this.race;
+		return race;
 	}
 }
