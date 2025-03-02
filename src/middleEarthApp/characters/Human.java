@@ -1,20 +1,20 @@
 package middleEarthApp.characters;
 
-public class Dwarf extends MiddleEarthCharacter{
+public class Human extends MiddleEarthCharacter{
 	
-	private String race = "Dwarf";
+	private String race = "Human";
 	
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
-		if (target.getRace() == "Elf") {
+		if (target.getRace() == "Wizard") {
 			target.setHealth(target.getHealth() - (1.5 * this.power));
 			return true;
 		}
-		else if (target.getRace() == "Dwarf" || target.getRace() == "Wizard") {
+		else if (target.getRace() == "Orc" || target.getRace() == "Human") {
 			
 			return false;
 		}
-		else if (target.getRace() == "Human" || target.getRace() == "Orc") {
+		else if (target.getRace() == "Dwarf" || target.getRace() == "Elf") {
 			target.setHealth(target.getHealth() - this.power);
 			return true;
 		}
