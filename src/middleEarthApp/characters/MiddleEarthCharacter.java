@@ -28,8 +28,5 @@ public abstract class MiddleEarthCharacter {
 	public double getPower() {
 		return power;
 	}
-	public void setPower(double power) {
-		this.power = power;
-	}
 	
 }
