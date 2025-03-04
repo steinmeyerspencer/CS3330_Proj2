@@ -2,8 +2,9 @@ package middleEarthApp.characters;
 
 public class Human extends MiddleEarthCharacter{
 	
-	private String race = "Human";
-	
+	/**
+	 * Attacks wizard with 1.5 power, dwarf and elf with regular power, does not attack human and orc 
+	 */
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		if (target.getRace() == "Wizard") {
@@ -22,8 +23,11 @@ public class Human extends MiddleEarthCharacter{
 		
 	}
 
+	/**
+	 * returns race
+	 */
 	@Override
 	public String getRace() {
-		return race;
+		return "Human";
 	}
 }
