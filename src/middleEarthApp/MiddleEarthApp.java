@@ -12,9 +12,31 @@ public class MiddleEarthApp {
 		CharacterManager characterManager = newCouncil.getCharacterManager();
 		
 		Menu menu = new Menu();
-		int optionChoice = menu.printMenu();
-		if (optionChoice == 1) {
-			menu.runAdd(characterManager);
+		while(true) {
+			int optionChoice = menu.printMenu();
+			if (optionChoice == 1) {
+				menu.runAdd(characterManager);
+				continue;
+			}
+			else if (optionChoice == 2) {
+				menu.viewAllCharacters(characterManager);
+				continue;
+			}
+			else if (optionChoice == 3) {
+				menu.runUpdate(characterManager);
+				continue;
+			}
+			else if (optionChoice == 4) {
+				menu.runDelete(characterManager);
+				continue;
+			}
+			else if (optionChoice == 5) {
+				//menu.runUpdate(characterManager);
+				continue;
+			}
+			else if(optionChoice == 6) {
+				break;
+			}
 		}
 		
 		

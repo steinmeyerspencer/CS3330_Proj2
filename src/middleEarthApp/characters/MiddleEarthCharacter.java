@@ -83,6 +83,10 @@ public abstract class MiddleEarthCharacter {
 		return power;
 	}
 	
+	/**
+	 * used to set power of a character
+	 * @param power
+	 */
 	public void setPower(double power) {
 		this.power = power;
 	}

@@ -127,6 +127,55 @@ public class Menu {
 		
 	}
 	
+	/**
+	 * displays all characters 
+	 * @param manager
+	 */
+	public void viewAllCharacters(CharacterManager manager) {
+		manager.displayAllCharacters();
+	}
+	
+	/**
+	 * runs update character function after prompting for old name, new name, new health, new power
+	 * @param manager
+	 * @return
+	 */
+	public boolean runUpdate(CharacterManager manager) {
+		
+		System.out.println("Enter current name of character to update: ");
+		String oldName = getStringFromInput();
+		
+		System.out.println("Enter Name: ");
+		String newName = getStringFromInput();
+		
+		System.out.println("Enter health (1-1000): ");
+		int newHealth = getIntFromInput(1,1000);
+		
+		System.out.println("Enter power (1-100): ");
+		int newPower = getIntFromInput(1,100);
+		
+		MiddleEarthCharacter characterToUpdate = manager.getCharacter(oldName);
+		
+		return manager.updateCharacter(characterToUpdate, newName, newHealth, newPower);
+	}
+	
+	/**
+	 * runs deleteCharacter() after prompting for name of character to delete
+	 * @param manager
+	 * @return
+	 */
+	public boolean runDelete(CharacterManager manager) {
+		System.out.println("Enter name of character to delete: ");
+		String name = getStringFromInput();
+		MiddleEarthCharacter characterToDelete = manager.getCharacter(name);
+		
+		return manager.deleteCharacter(characterToDelete);
+
+	}
+	
+	
+	
+	
 }
 
 
