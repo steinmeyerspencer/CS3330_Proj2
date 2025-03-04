@@ -173,7 +173,9 @@ public class Menu {
 
 	}
 	
-	
+	public void allCharactersAttack(CharacterManager manager) {
+		manager.executeAllAttacks();
+	}
 	
 	
 }

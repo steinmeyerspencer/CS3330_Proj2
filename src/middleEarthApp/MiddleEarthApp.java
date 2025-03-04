@@ -31,7 +31,7 @@ public class MiddleEarthApp {
 				continue;
 			}
 			else if (optionChoice == 5) {
-				//menu.runUpdate(characterManager);
+				menu.allCharactersAttack(characterManager);
 				continue;
 			}
 			else if(optionChoice == 6) {

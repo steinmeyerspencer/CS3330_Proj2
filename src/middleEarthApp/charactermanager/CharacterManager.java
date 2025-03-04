@@ -146,6 +146,27 @@ public class CharacterManager {
 		}
 	}
 	
+	/**
+	 * executeAllAttacks that is the 5ht option in the menu
+	 * runs through array of characters and attacks
+	 * @return
+	 */
+	public void executeAllAttacks() {
+		int successfulAttacks = 0;
+		int totalAttacks = 0;
+		for (int i = 0; i <= size - 1;i++) {
+			for (int j = 0; j <= size - 1; j++) {
+				if(i != j) {
+					totalAttacks++;
+					if(characters[i].attack(characters[j])) {
+						successfulAttacks++;
+					}
+				}
+			}
+		}
+		System.out.println(successfulAttacks+ " successful attacks out of " + totalAttacks + " attempted attacks.");
+	}
+	
 	
 	
 	
