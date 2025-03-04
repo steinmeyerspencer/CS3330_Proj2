@@ -9,6 +9,19 @@ public abstract class MiddleEarthCharacter {
 	public double health;
 	public double power;
 	
+	
+	/**
+	 * parameterized constructor
+	 * @param name
+	 * @param health
+	 * @param power
+	 */
+	public MiddleEarthCharacter(String name, double health, double power) {
+		this.name = name;
+		this.health = health;
+		this.power = power;
+	}
+
 	/**
 	 * abstract attack(target) function to attack the target character
 	 * decides attack power by race of target

@@ -90,9 +90,14 @@ public class CharacterManager {
 		for (int i = 0; i < characters.length; i++) {
 			if (character == characters[i]) {
 				// update character attributes
-				characters[i].setName(name);
-				characters[i].setHealth(health);
-				characters[i].setPower(power);
+				try {
+					characters[i].setName(name);
+					characters[i].setHealth(health);
+					characters[i].setPower(power);
+				}
+				catch(Exception e) {
+					System.out.println("Error with update: " + e);
+				}
 				
 				System.out.println("Attributes updated.");
 				return true;

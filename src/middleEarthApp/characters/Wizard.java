@@ -2,6 +2,11 @@ package middleEarthApp.characters;
 
 public class Wizard extends MiddleEarthCharacter{
 	
+	public Wizard(String name, double health, double power) {
+		super(name, health, power);
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Attacks dwarf with 1.5 power, elf and orc with regular power, does not attack human and wizard 
 	 */
