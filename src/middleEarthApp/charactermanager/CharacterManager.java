@@ -148,7 +148,9 @@ public class CharacterManager {
 	
 	/**
 	 * executeAllAttacks that is the 5ht option in the menu
-	 * runs through array of characters and attacks
+	 * runs through array of characters and attacks if not themself.
+	 * keeps track of total attempted attacks and successful attacks
+	 * void function, prints out successful attacks and total attempts
 	 * @return
 	 */
 	public void executeAllAttacks() {

@@ -173,6 +173,10 @@ public class Menu {
 
 	}
 	
+	/**
+	 * executes all characters attacks
+	 * @param manager
+	 */
 	public void allCharactersAttack(CharacterManager manager) {
 		manager.executeAllAttacks();
 	}
