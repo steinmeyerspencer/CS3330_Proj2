@@ -48,6 +48,8 @@ public class CharacterManager {
 				characters[i] = c;
 				size++;
 				System.out.println("Character added");
+				c.displayInfo();
+				System.out.println("and they are a " + c.getRace());
 				return true;
 			}	
 		}

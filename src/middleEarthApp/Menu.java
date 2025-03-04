@@ -2,6 +2,14 @@ package middleEarthApp;
 
 import java.util.Scanner;
 
+import middleEarthApp.charactermanager.CharacterManager;
+import middleEarthApp.characters.Dwarf;
+import middleEarthApp.characters.Elf;
+import middleEarthApp.characters.Human;
+import middleEarthApp.characters.MiddleEarthCharacter;
+import middleEarthApp.characters.Orc;
+import middleEarthApp.characters.Wizard;
+
 public class Menu {
 	
 	
@@ -26,14 +34,14 @@ public class Menu {
 	private int getIntFromInput(int startInclusive, int endInclusive) {
 		while(true) {
 			if(input.hasNextInt()) {
-				if(input.nextInt() >= startInclusive || input.nextInt() <= endInclusive) {
-					int answer = input.nextInt();
+				int answer = input.nextInt();
+				if(answer >= startInclusive && answer <= endInclusive) {
 					System.out.println("You entered " + answer);
 					input.nextLine();
 					return answer;
 				}
 				else {
-					System.out.println("Integer not in accepted range");
+					System.out.println("Integer not in accepted range, try again.");
 					input.nextLine();
 					continue;
 				}
@@ -52,18 +60,10 @@ public class Menu {
 	 * @return
 	 */
 	private String getStringFromInput() {
-		while(true) {
-			if(input.next() instanceof String) {
-				String string = input.next();
-				input.nextLine();
-				return string;
-			}
-			else {
-				System.out.println("Input not recognized as a string, try again.");
-				input.nextLine();
-				continue;
-			}
-		}
+		String string = input.next();
+		input.nextLine();
+		System.out.println("You entered " + string);
+		return string;
 	}
 	
 	
@@ -83,8 +83,12 @@ public class Menu {
 	}
 
 	
-	
-	public boolean runAdd() {
+	/**
+	 * runs the add character function after prompting for all necessary info
+	 * @param manager
+	 * @return
+	 */
+	public boolean runAdd(CharacterManager manager) {
 		
 		System.out.println("Enter Name: ");
 		String name = getStringFromInput();
@@ -102,8 +106,25 @@ public class Menu {
 		System.out.println("4. Orc");
 		System.out.println("5. Wizard");
 		int race = getIntFromInput(1,5);
-		return true;
-	
+		
+		MiddleEarthCharacter newCharacter;
+		if(race == 1) {
+			newCharacter = new Dwarf(name,health,power);
+		}
+		else if (race == 2) {
+			newCharacter = new Elf(name,health,power);
+		}
+		else if (race == 3) {
+			newCharacter = new Human(name,health,power);
+		}
+		else if (race == 4) {
+			newCharacter = new Orc(name,health,power);
+		}
+		else{
+			newCharacter = new Wizard(name,health,power);
+		}
+		return manager.addCharacter(newCharacter);
+		
 	}
 	
 }

@@ -32,6 +32,7 @@ public class MiddleEarthCouncil {
 	
 	
 	public CharacterManager getCharacterManager() {
+		CharacterManager characterManager = new CharacterManager();
 		return characterManager;
 	}
 	
