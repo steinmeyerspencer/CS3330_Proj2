@@ -9,19 +9,19 @@ public class CharacterManager {
 	 * Made by Dane
 	 */
 	public MiddleEarthCharacter[] characters;
-	public int size;
+	public int size = 0;
 	
 	
-	/**
-	 * non parameterized constructor
-	 * with array size starting at 5
-	 * Made by Dane
-	 */
-	public CharacterManager() {
-		this.characters = new MiddleEarthCharacter[5];
-		this.size = 0;
-		
-	}
+//	/**
+//	 * non parameterized constructor
+//	 * with array size starting at 5
+//	 * Made by Dane
+//	 */
+//	public CharacterManager() {
+//		this.characters = new MiddleEarthCharacter[5];
+//		this.size = 0;
+//		
+//	}
 	
 	/**
 	 * creating method to add character to Character array

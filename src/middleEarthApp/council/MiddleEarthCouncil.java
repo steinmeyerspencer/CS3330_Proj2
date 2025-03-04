@@ -5,14 +5,13 @@ import middleEarthApp.charactermanager.CharacterManager;
 public class MiddleEarthCouncil {
 	
 	private static MiddleEarthCouncil instance;
-	private CharacterManager characterManager;
 	
 	/**
 	 * prevent from being invoked outside
 	 * Made by Dane
 	 */
 	private MiddleEarthCouncil() {
-		CharacterManager characterManager = new CharacterManager();
+		
 	}
 	
 	
