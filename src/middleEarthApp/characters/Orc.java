@@ -4,7 +4,6 @@ public class Orc extends MiddleEarthCharacter{
 
 	public Orc(String name, double health, double power) {
 		super(name, health, power);
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -13,7 +12,7 @@ public class Orc extends MiddleEarthCharacter{
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		if (target.getRace() == "Human") {
-			target.setHealth(target.getHealth() - (1.5 * this.power));
+			target.setHealth(target.getHealth() - (1.5 * power));
 			return true;
 		}
 		else if (target.getRace() == "Orc" || target.getRace() == "Elf") {
@@ -21,7 +20,7 @@ public class Orc extends MiddleEarthCharacter{
 			return false;
 		}
 		else if (target.getRace() == "Dwarf" || target.getRace() == "Wizard") {
-			target.setHealth(target.getHealth() - this.power);
+			target.setHealth(target.getHealth() - power);
 			return true;
 		}
 		return false;

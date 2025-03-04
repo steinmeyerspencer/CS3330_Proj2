@@ -15,7 +15,7 @@ public class Human extends MiddleEarthCharacter{
 	@Override
 	public boolean attack(MiddleEarthCharacter target) {
 		if (target.getRace() == "Wizard") {
-			target.setHealth(target.getHealth() - (1.5 * this.power));
+			target.setHealth(target.getHealth() - (1.5 * power));
 			return true;
 		}
 		else if (target.getRace() == "Orc" || target.getRace() == "Human") {
@@ -23,7 +23,7 @@ public class Human extends MiddleEarthCharacter{
 			return false;
 		}
 		else if (target.getRace() == "Dwarf" || target.getRace() == "Elf") {
-			target.setHealth(target.getHealth() - this.power);
+			target.setHealth(target.getHealth() - power);
 			return true;
 		}
 		return false;
