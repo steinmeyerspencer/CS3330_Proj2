@@ -29,7 +29,10 @@ public class MiddleEarthCouncil {
 		return instance;
 	}
 	
-	
+	/**
+	 * returns an instance of characterManager
+	 * @return
+	 */
 	public CharacterManager getCharacterManager() {
 		CharacterManager characterManager = new CharacterManager();
 		return characterManager;

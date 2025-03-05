@@ -100,7 +100,7 @@ public class Menu {
 		System.out.println("Enter power (1-100): ");
 		int power = getIntFromInput(1,100);
 		
-		System.out.println("What race would you like your character to be?");
+		System.out.println("What race would you like your character to be? Enter an integer.");
 		System.out.println("1. Dwarf");
 		System.out.println("2. Elf");
 		System.out.println("3. Human");
