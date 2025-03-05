@@ -1,6 +1,7 @@
 package middleEarthApp;
 
 import middleEarthApp.charactermanager.CharacterManager;
+import middleEarthApp.Menu;
 import middleEarthApp.characters.Orc;
 import middleEarthApp.council.MiddleEarthCouncil;
 
@@ -35,7 +36,9 @@ public class MiddleEarthApp {
 				continue;
 			}
 			else if(optionChoice == 6) {
-				break;
+				System.out.println("Exiting the program...");
+                menu.getScanner().close();  
+                System.exit(0);
 			}
 		}
 		

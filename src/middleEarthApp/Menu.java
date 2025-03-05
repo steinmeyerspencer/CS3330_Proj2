@@ -21,7 +21,7 @@ public class Menu {
 	}
 
 	// starts scanner
-	Scanner input = new Scanner(System.in);
+	private Scanner input = new Scanner(System.in);
 	
 	/**
 	 * parameterized function getting integer from an input
@@ -79,6 +79,7 @@ public class Menu {
 		System.out.println("4. Delete a character.");
 		System.out.println("5. Execute all characters' attack actions.");
 		System.out.println("6. Exit.");
+		System.out.println("Enter your option: ");
 		return getIntFromInput(1,6);
 	}
 
@@ -143,20 +144,26 @@ public class Menu {
 	public boolean runUpdate(CharacterManager manager) {
 		
 		System.out.println("Enter current name of character to update: ");
-		String oldName = getStringFromInput();
+		try {
+			String oldName = getStringFromInput();
+			
+			System.out.println("Enter Name: ");
+			String newName = getStringFromInput();
+			
+			System.out.println("Enter health (1-1000): ");
+			int newHealth = getIntFromInput(1,1000);
+			
+			System.out.println("Enter power (1-100): ");
+			int newPower = getIntFromInput(1,100);
+			
+			MiddleEarthCharacter characterToUpdate = manager.getCharacter(oldName);
+			
+			return manager.updateCharacter(characterToUpdate, newName, newHealth, newPower);
+		}catch (Exception e) {
+			System.out.println("ERROR: Could not find character.");
+			return false;
+		}
 		
-		System.out.println("Enter Name: ");
-		String newName = getStringFromInput();
-		
-		System.out.println("Enter health (1-1000): ");
-		int newHealth = getIntFromInput(1,1000);
-		
-		System.out.println("Enter power (1-100): ");
-		int newPower = getIntFromInput(1,100);
-		
-		MiddleEarthCharacter characterToUpdate = manager.getCharacter(oldName);
-		
-		return manager.updateCharacter(characterToUpdate, newName, newHealth, newPower);
 	}
 	
 	/**
@@ -167,9 +174,16 @@ public class Menu {
 	public boolean runDelete(CharacterManager manager) {
 		System.out.println("Enter name of character to delete: ");
 		String name = getStringFromInput();
-		MiddleEarthCharacter characterToDelete = manager.getCharacter(name);
 		
-		return manager.deleteCharacter(characterToDelete);
+		try {
+			MiddleEarthCharacter characterToDelete = manager.getCharacter(name);
+			
+			return manager.deleteCharacter(characterToDelete);
+		}catch (Exception e){
+			System.out.println("ERROR: Cannot find character.");
+			return false;
+		}
+		
 
 	}
 	
@@ -180,6 +194,15 @@ public class Menu {
 	public void allCharactersAttack(CharacterManager manager) {
 		manager.executeAllAttacks();
 	}
+	
+	
+	/**
+	 * Provides way to initialize and access scanner
+	 * @return
+	 */
+	public Scanner getScanner() {
+        return input;
+    }
 	
 	
 }
